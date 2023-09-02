@@ -22,5 +22,23 @@ public class MathFunctions {
 		Predicate<Integer> isEven = x -> !isOdd.apply(x);
 		System.out.println("122 is even? " + isEven.test(122));
 		System.out.println("121 is even? " + isEven.test(121));
+
+		Student s = new Student(9);
+
+		Predicate<Student> hasApproved = student -> student.getGrade() > 6.0;
+
+		System.out.println("Has student approved? " + hasApproved.test(s));
+	}
+
+	static class Student {
+		private double grade;
+
+		public Student(double grade) {
+			this.grade = grade;
+		}
+
+		public double getGrade() {
+			return grade;
+		}
 	}
 }
