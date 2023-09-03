@@ -19,5 +19,12 @@ public class StringFunctions {
 
 		System.out.println("2 * 2 is= " + multiplication.apply(2, 2));
 		System.out.println("5 * 7 is= " + multiplication2.apply(5, 7));
+
+		BiFunction<String, Integer, String> leftPad = (text, pad) -> {
+			return String.format("%" + pad + "s", text);
+		};
+
+		System.out.println(leftPad.apply("Miguel", 15));
+		System.out.println(String.format("%15s", "Miguel"));
 	}
 }
