@@ -1,5 +1,7 @@
 package com.platzi.functional._04_functional;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.UnaryOperator;
