@@ -6,10 +6,10 @@ import java.util.function.Function;
 
 public class AgeUtils {
 	public static void main(String[] args) {
-		Function<Integer, String> addCeroes = number -> number <= 9 ? "0" + number : number.toString();
+		Function<Integer, String> addZeroes = number -> number <= 9 ? "0" + number : number.toString();
 
 		TriFunction<Integer, Integer, Integer, LocalDate> parseDate =
-						(day, month, year) -> LocalDate.parse(year + "-" + addCeroes.apply(month) + "-" + addCeroes.apply(day));
+						(day, month, year) -> LocalDate.parse(year + "-" + addZeroes.apply(month) + "-" + addZeroes.apply(day));
 		TriFunction<Integer, Integer, Integer, Integer> calculateAge =
 						(day, month, year) -> Period.between(parseDate.apply(day, month, year), LocalDate.now()).getYears();
 
