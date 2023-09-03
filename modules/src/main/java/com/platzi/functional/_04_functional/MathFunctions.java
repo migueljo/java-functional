@@ -23,11 +23,11 @@ public class MathFunctions {
 		System.out.println("122 is even? " + isEven.test(122));
 		System.out.println("121 is even? " + isEven.test(121));
 
-		Student s = new Student(9);
+		Student miguel = new Student(9);
 
-		Predicate<Student> hasApproved = student -> student.getGrade() > 6.0;
+		Predicate<Student> hasApproved = student -> student.getGrade() >= 6.0;
 
-		System.out.println("Has student approved? " + hasApproved.test(s));
+		System.out.println("Has student approved? " + hasApproved.test(miguel));
 	}
 
 	static class Student {
