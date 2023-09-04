@@ -17,6 +17,10 @@ public class Lambdas {
 		usePredicate(t -> !t.isEmpty());
 
 		useBiFunction((x, y) -> x * y);
+		useBiFunction((x, y) -> {
+			System.out.println("X: " + x + " Y:" + y);
+			return x * y;
+		});
 	}
 
 	static void useZero(ZeroArguments zeroArguments) {
