@@ -31,7 +31,7 @@ public class Lambdas {
 		System.out.println("Use zero: " + zeroArguments.get());
 	}
 
-	static void usePredicate(@NotNull Predicate<String> predicate) {
+	static void usePredicate(Predicate<String> predicate) {
 		if (predicate.test("Not empty")) {
 			System.out.println("Predicate is true");
 		} else {
