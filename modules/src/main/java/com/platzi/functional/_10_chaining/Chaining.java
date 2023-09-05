@@ -2,11 +2,10 @@ package com.platzi.functional._10_chaining;
 
 public class Chaining {
 	public static void main(String[] args) {
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("Hola ")
-						.append("Mundo ")
-						.append(":) ")
-						.append("adios.");
+		String stringBuilder = "Hola " +
+						"Mundo " +
+						":) " +
+						"adios.";
 		System.out.println(stringBuilder);
 
 		Chainer chainer = new Chainer();
