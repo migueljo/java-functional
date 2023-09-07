@@ -21,6 +21,8 @@ public class Optionals {
 			optionalNames2.get().forEach(System.out::println);
 		}
 
+		Optional<String> mvp = getOptionalMVP();
+		System.out.println("The MVP is: " + mvp.orElseGet(() -> "Andrés"));;
 	}
 
 	static List<String> getNames() {
@@ -28,7 +30,7 @@ public class Optionals {
 		return Collections.emptyList();
 	}
 
-	static String mvp() {
+	static String getMVP() {
 		return null;
 	}
 
@@ -49,6 +51,16 @@ public class Optionals {
 		} else {
 			return Optional.empty(); // Return an empty Optional to indicate the absence of a value
 		}
+	}
+
+	static Optional<String> getOptionalMVP() {
+		try {
+			return Optional.of("Miguel");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return Optional.empty();
 	}
 
 }
