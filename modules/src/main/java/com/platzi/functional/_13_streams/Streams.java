@@ -4,6 +4,7 @@ import com.platzi.functional._06_reference_operator.NamesUtils;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Streams {
@@ -13,13 +14,14 @@ public class Streams {
 			System.out.println("Course: " + course);
 		}
 
-		Stream<String> coursesStream = Stream.of("Java", "Javascript", "SQL", "CSS");
+		Stream<String> coursesStream = courses.stream();
+		Stream<String> coursesStream2 = courses.stream();
 
 		Stream<Integer> coursesLengthStream = coursesStream.map(String::length);
 		Optional<Integer> longestCourse = coursesLengthStream.max((x, y) -> y - x);
 		System.out.println("Longest course: " + (longestCourse.orElseGet(() -> 0)) );
 
-		Stream<String> emphasisCourses = coursesStream.map(c -> c + "!");
+		Stream<String> emphasisCourses = coursesStream2.map(c -> c + "!");
 		emphasisCourses.forEach(System.out::println);
 	}
 }
