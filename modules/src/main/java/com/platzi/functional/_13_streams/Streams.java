@@ -18,5 +18,8 @@ public class Streams {
 		Stream<Integer> coursesLengthStream = coursesStream.map(String::length);
 		Optional<Integer> longestCourse = coursesLengthStream.max((x, y) -> y - x);
 		System.out.println("Longest course: " + (longestCourse.orElseGet(() -> 0)) );
+
+		Stream<String> emphasisCourses = coursesStream.map(c -> c + "!");
+		emphasisCourses.forEach(System.out::println);
 	}
 }
