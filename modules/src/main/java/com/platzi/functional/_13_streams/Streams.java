@@ -16,12 +16,15 @@ public class Streams {
 
 		Stream<String> coursesStream = courses.stream();
 		Stream<String> coursesStream2 = courses.stream();
+		Stream<String> coursesStream3 = courses.stream();
 
 		Stream<Integer> coursesLengthStream = coursesStream.map(String::length);
 		Optional<Integer> longestCourse = coursesLengthStream.max((x, y) -> y - x);
 		System.out.println("Longest course: " + (longestCourse.orElseGet(() -> 0)) );
 
 		Stream<String> emphasisCourses = coursesStream2.map(c -> c + "!");
+		Stream<String> justJavaCourses = coursesStream3.filter(c -> c.contains("Java"));
 		emphasisCourses.forEach(System.out::println);
+		justJavaCourses.forEach(c -> System.out.println("Java course ->" + c));
 	}
 }
