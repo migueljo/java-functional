@@ -26,5 +26,13 @@ public class Streams {
 		Stream<String> justJavaCourses = coursesStream3.filter(c -> c.contains("Java"));
 		emphasisCourses.forEach(System.out::println);
 		justJavaCourses.forEach(c -> System.out.println("Java course ->" + c));
+
+		Stream<String> coursesStream4 = courses.stream();
+
+		addOperator(coursesStream4.map(c -> c + "!!").filter(c -> c.contains("Java"))).forEach(System.out::println);
+	}
+
+	static <T> Stream<T> addOperator(Stream<T> stream) {
+		return stream.peek(data -> System.out.println("Data: " + data));
 	}
 }
