@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class Operations {
+public class FinalOperations {
 	public static void main(String[] args) {
 		Stream<Integer> streamNumbers = Stream.of(1, 2, 3, 4, 5, 6, 7, 11);
 		boolean biggerThanTen = streamNumbers.anyMatch(n -> n > 10);
@@ -46,7 +46,7 @@ public class Operations {
 		System.out.println("Total: " + sumOfFirstTen);
 
 		Stream<String> aLongStoryStreamAgain = Stream.of("Cuando", "despertó,", "el", "dinosaurio", "todavía", "estaba", "allí.");
-		int charCount = aLongStoryStreamAgain.reduce(0, (count, word) -> count + word.length(), Integer::sum);
+		Integer charCount = aLongStoryStreamAgain.reduce(0, (count, word) -> count + word.length(), Integer::sum);
 		System.out.println("Character count: " + charCount);
 
 		Stream<Integer> yearsStream = Stream.of(1990, 1991, 1994, 2000, 2010, 2019, 2020);
