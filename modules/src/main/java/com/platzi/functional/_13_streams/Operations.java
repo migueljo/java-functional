@@ -44,5 +44,9 @@ public class Operations {
 		Stream<Integer> firstTenNumbersStream = Stream.iterate(0, i -> i + 1).limit(10);
 		Integer sumOfFirstTen = firstTenNumbersStream.reduce(0, Integer::sum);
 		System.out.println("Total: " + sumOfFirstTen);
+
+		Stream<String> aLongStoryStreamAgain = Stream.of("Cuando", "despertó,", "el", "dinosaurio", "todavía", "estaba", "allí.");
+		int charCount = aLongStoryStreamAgain.reduce(0, (count, word) -> count + word.length(), Integer::sum);
+		System.out.println("Character count: " + charCount);
 	}
 }
