@@ -36,5 +36,13 @@ public class Operations {
 		Stream<Long> bigNumbers2 = bigNumbers.stream();
 		Optional<Long> maxValue = bigNumbers2.max((x, y) -> (int)Math.max(x, y));
 		System.out.println("Max value is: " + maxValue.orElse(null));
+
+		Stream<String> aLongStoryStream = Stream.of("Se", "vende: ", "zapatos", "de", "bebé", "sin", "usar");
+		Optional<String> longStoryOptional = aLongStoryStream.reduce((acc, curr) -> acc + " " + curr);
+		longStoryOptional.ifPresent(System.out::println);
+
+		Stream<Integer> firstTenNumbersStream = Stream.iterate(0, i -> i + 1).limit(10);
+		Integer sumOfFirstTen = firstTenNumbersStream.reduce(0, Integer::sum);
+		System.out.println("Total: " + sumOfFirstTen);
 	}
 }
