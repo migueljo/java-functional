@@ -48,5 +48,9 @@ public class Operations {
 		Stream<String> aLongStoryStreamAgain = Stream.of("Cuando", "despertó,", "el", "dinosaurio", "todavía", "estaba", "allí.");
 		int charCount = aLongStoryStreamAgain.reduce(0, (count, word) -> count + word.length(), Integer::sum);
 		System.out.println("Character count: " + charCount);
+
+		Stream<Integer> yearsStream = Stream.of(1990, 1991, 1994, 2000, 2010, 2019, 2020);
+		long yearsCount = yearsStream.count();
+		System.out.println("Years count: " + yearsCount);
 	}
 }
