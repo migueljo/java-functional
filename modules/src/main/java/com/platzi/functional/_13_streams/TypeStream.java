@@ -11,5 +11,7 @@ public class TypeStream {
 						.filter(x -> x % 2 == 0)
 						.boxed()
 						.collect(Collectors.toList());
+
+		integerList.forEach(n -> System.out.println("Number: " + n));
 	}
 }
